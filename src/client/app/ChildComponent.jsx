@@ -9,7 +9,7 @@ class ChildComponent extends React.Component {
     }
 
     onLike() {
-        console.log('called');
+        
         let newLikesCount = this.state.likesCount + 1;
         this.setState({likesCount: newLikesCount});
     }
