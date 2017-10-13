@@ -24,8 +24,8 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div>
-                <p>Hello World!</p>
+            <div className="app">
+                <p>Post App - Coming soon!</p>
                 <ChildComponent />
             </div>
         );
