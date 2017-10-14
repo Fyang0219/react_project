@@ -7,6 +7,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handlePostSubmit = this.handlePostSubmit.bind(this);
         this.fetchPosts =this.fetchPosts.bind(this);
         this.state = {
             posts: {
