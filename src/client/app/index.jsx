@@ -5,8 +5,9 @@ import ChildComponent from './ChildComponent.jsx';
 
 class App extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.fetchPosts =this.fetchPosts.bind(this);
         this.state = {
             posts: {
                 all: [],
