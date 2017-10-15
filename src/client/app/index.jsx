@@ -33,11 +33,23 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className="app">
-                <p>Post App - Coming soon!</p>
-                <ChildComponent />
+            <div className="posts">
+                {
+                    this.state.loaded ?
+                        this.state.posts.map(post => {
+                            return (
+                                <div className="post">
+                                    {post.content}
+                                </div>
+                            );
+                        })
+                    :
+                    <div className="loader">
+                            loading!
+                    </div>
+                }
             </div>
-        );
+        )
     }
 }
 
