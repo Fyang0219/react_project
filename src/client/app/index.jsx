@@ -2,6 +2,7 @@
 import {render} from 'react-dom';
 import React from 'react';
 import ChildComponent from './ChildComponent.jsx';
+import Post from './post';
 
 class App extends React.Component {
 
@@ -36,13 +37,7 @@ class App extends React.Component {
             <div className="posts">
                 {
                     this.state.loaded ?
-                        this.state.posts.map(post => {
-                            return (
-                                <div className="post">
-                                    {post.content}
-                                </div>
-                            );
-                        })
+                        this.state.posts.map(post => <Post post={post}/>)
                     :
                     <div className="loader">
                             loading!
