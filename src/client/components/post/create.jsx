@@ -16,12 +16,25 @@ class CreatePost extends Component {
     handlePostChange(event) {
         console.log('handling an update to the post body');
         const content = event.target.value;
-        this.setState({ content: content});
+        this.setState({ 
+            content: content,
+            valid: content.length >= 300,
+        });
     }
 
     handleSubmit(event) {
         event.preventDefault();
         console.log('handling submission');
+        if(!this.state.valid) {
+            return;
+        }
+        const newPost = {
+            data: Date.now(),
+            id: Date.now(),
+            content: this.state.content
+        };
+
+        console.log(this.state);
     }
 
     render() {
@@ -31,7 +44,13 @@ class CreatePost extends Component {
                     value={this.state.content}
                     onChange={this.handlePostChange} 
                     placeholder="What's on your mind" />
-                <input type="submit" placeholder="Post" className="btn btn-default"/>
+                {
+                    this.state.valid ?
+                        <div> your post is too long! : </div>
+                        :
+                        null
+                }
+                <input type="submit" placeholder="Post" className="btn btn-default" disabled={this.state.valid}/>
             </form>
         );
     }
