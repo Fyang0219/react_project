@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Filter from 'bad-words';
+
+const filter = new Filter();
 
 class CreatePost extends Component {
 
@@ -15,7 +18,7 @@ class CreatePost extends Component {
 
     handlePostChange(event) {
         console.log('handling an update to the post body');
-        const content = event.target.value;
+        const content = filter.clean(event.target.value);
         this.setState({ 
             content: content,
             valid: content.length >= 300,
