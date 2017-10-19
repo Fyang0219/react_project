@@ -28,6 +28,7 @@ class CreatePost extends Component {
         return (
             <form className="create-post" onSubmit={this.handleSubmit}>
                 <textarea
+                    value={this.state.content}
                     onChange={this.handlePostChange} 
                     placeholder="What's on your mind" />
                 <input type="submit" placeholder="Post" className="btn btn-default"/>
