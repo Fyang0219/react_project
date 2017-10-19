@@ -19,8 +19,10 @@ class CreatePost extends Component {
 
     render() {
         return (
-            <form className="create-post">
-                <textarea placeholder="What's on your mind" />
+            <form className="create-post" onSubmit={this.handleSubmit}>
+                <textarea
+                    onChange={this.handlePostChange} 
+                    placeholder="What's on your mind" />
                 <input type="submit" placeholder="Post" className="btn btn-default"/>
             </form>
         );
