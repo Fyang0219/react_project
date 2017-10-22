@@ -37,6 +37,12 @@ class CreatePost extends Component {
             content: this.state.content
         };
 
+        this.props.onSubmit(newPost);
+        this.setState({
+            content: '',
+            valid: null
+        });
+
         console.log(this.state);
     }
 
